@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: h8pu662uf-python-gitops
+  description: This is GitOps manifest for h8pu662uf-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=h8pu662uf-python
+    backstage.io/kubernetes-id: h8pu662uf-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: h8pu662uf-python-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:h8pu662uf-python
